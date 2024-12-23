@@ -60,7 +60,7 @@ Use Ether scan or a similar service to verify the contract code:
 # Load env in you terminal session 
 $ export $(grep -v '^#' .env | xargs)
 
-# Verification Pool Contract
+# Verify Contract
 $ forge verify-contract --chain base-sepolia --compiler-version v0.8.20 --etherscan-api-key $ETHERSCAN_API_KEY <CONTRACT_ADDRESS> src/MockERC20.sol:MockERC20 --constructor-args $(cast abi-encode "constructor(string,string,uint8)" "Deca USD" "DUSDC" 6)
 
 ```
