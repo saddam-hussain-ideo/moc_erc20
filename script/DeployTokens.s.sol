@@ -28,10 +28,14 @@ contract DeployTokens is Script {
         MockERC20 ena = new MockERC20("ENA", "ENA", 18);
         console.log("ENA deployed to:", address(ena));
 
+        MockERC20 dwewe = new MockERC20("dWEWE", "DWEWE", 18);
+        console.log("DWEWE deployed to:", address(dwewe));
+
         // Mint tokens to a specific address
-        dusdc.mint(deployer, 1_000_000 * 10 ** 6); // 1,000,000 DUSDC
-        om.mint(deployer, 1_000_000 * 10 ** 18); // 1,000,000 OM
-        ena.mint(deployer, 1_000_000 * 10 ** 18); // 1,000,000 ENA
+        dusdc.mint(mintAddress, 1_000_000 * 10 ** 6); // 1,000,000 DUSDC
+        om.mint(mintAddress, 1_000_000 * 10 ** 18); // 1,000,000 OM
+        ena.mint(mintAddress, 1_000_000 * 10 ** 18); // 1,000,000 ENA
+        dwewe.mint(mintAddress, 1_000_000 * 10 ** 18); // 1,000,000 DWEWE
 
         vm.stopBroadcast();
     }
